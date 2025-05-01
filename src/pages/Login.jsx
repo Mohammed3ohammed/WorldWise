@@ -7,8 +7,8 @@ import { useAuth } from "../contexts/FakeAuthContext";
 
 export default function Login() {
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("m@gmail.com");
+  const [password, setPassword] = useState("12345678");
 
   const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
@@ -26,18 +26,19 @@ export default function Login() {
   return (
     <main className={styles.login}>
         <PageNav />
-
         <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
                 <label htmlFor="email">Email address</label>
-                <input type="email" id="email" onChange={(e) =>  setEmail(e.target.value)} />
+                <input type="email" id="email"  onChange={(e) =>  setEmail(e.target.value)} value={password} />
              </div>
+
              <div className={styles.row}>
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" onChange={(e) => setPassword(e.target.value)}  />
              </div>
+
              <div>
-                <Button type="primary">Login</Button>
+                <Button type="primary">Login   </Button>
                 </div>
         </form>
     </main>
