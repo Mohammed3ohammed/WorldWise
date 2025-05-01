@@ -25,7 +25,7 @@ const FAKE_USER = {
     avatar: "https://i.pravatar.cc/100?u=zz",
 };
 
-function AuthProvider({ children }) {
+function AuthProvider( {children} ) {
     const [{user, isAuthenticated}, dispatch] = useReducer(
         reducer,
         initialState

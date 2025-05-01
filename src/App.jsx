@@ -3,10 +3,12 @@ import Homepage from "./pages/Homepage";
 import Pricing from "./pages/Pricing";
 import Product from "./pages/Product";
 import Login from "./pages/Login";
+import { AuthProvider } from "./contexts/FakeAuthContext";
 
  function App() {
   return (
-    <BrowserRouter>
+    <AuthProvider>
+          <BrowserRouter>
       <Routes>
         <Route  index element={<Homepage />}  />
         <Route path="product" element={<Product />} />
@@ -14,6 +16,7 @@ import Login from "./pages/Login";
         <Route path="login" element={<Login />} />
       </Routes>
     </BrowserRouter>
+    </AuthProvider>
   )
 }
 

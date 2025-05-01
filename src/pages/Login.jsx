@@ -10,7 +10,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const {login, isAuthenticated} = useAuth();
+  const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -27,7 +27,7 @@ export default function Login() {
     <main className={styles.login}>
         <PageNav />
 
-        <form className={styles.form} onClick={handleSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
                 <label htmlFor="email">Email address</label>
                 <input type="email" id="email" onChange={(e) =>  setEmail(e.target.value)} />
