@@ -1,4 +1,4 @@
-import { styles } from 'Spinner.module.css';
+import styles from "./CityItem.module.css";
 
     const formatDate = (date) => {
         new Intl.DateTimeFormat("en", {
