@@ -33,7 +33,7 @@ function City() {
                 <h6>You went to {cityName} on</h6>
                 <p>{FormData(date || null)}</p>
             </div>
-            {note && (
+            {notes && (
                 <div className={styles.row}>
                     <h6>Your notes</h6>
                     <p>{notes}</p>
