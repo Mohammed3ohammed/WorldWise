@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
 import styles from "./Form.module.css"
 import BackButton from "./BackButton";
+import useUrlPosition from "../hooks/useUrlPosition";
 
 export function convertToEmoji(countryCode) {
     const codePoints = countryCode
@@ -11,13 +12,34 @@ export function convertToEmoji(countryCode) {
     return String.fromCodePoint(...codePoints);
 }
 
+const BASE_URL = ""
+
 function Form() {
     
-
+    const [lat, lng] = useUrlPosition();
     const [cityName, setCityName] = useState("");
     const [country, setCountry] = useState("");
     const [date, setDate] = useState(new Date());
     const [notes, setNotes] = useState();
+    const [emoji, setEmoji] = useState("");
+
+    useEffect(() => {
+        async function fetchCityData() {
+            try {
+                setIsLoadingGeocoding(true);
+                const res = await fetch(`${BASE_URL}?latitude=${lat}&longi`);
+                const data = await res.json();
+                console.log(data);
+                setCityName(data.city || data.locality || "");
+                setCountry(data.countryName);
+                setEmoji(convertToEmoji(data.countryCode))
+            } catch (err) {
+                console.error(err);
+            } finally {
+                setIsLoadingGeocoding(false);
+            }
+        }
+    }, []);
 
     return (
         <form className={styles.form}>
