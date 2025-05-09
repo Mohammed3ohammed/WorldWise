@@ -3,6 +3,8 @@ import Button from "./Button";
 import styles from "./Form.module.css"
 import BackButton from "./BackButton";
 import useUrlPosition from "../hooks/useUrlPosition";
+import Message from "./Message";
+import Spinner from "./Spinner";
 
 export function convertToEmoji(countryCode) {
     const codePoints = countryCode
@@ -27,23 +29,35 @@ function Form() {
         async function fetchCityData() {
             try {
                 setIsLoadingGeocoding(true);
+                setGeocodingError("");
                 const res = await fetch(`${BASE_URL}?latitude=${lat}&longi`);
                 const data = await res.json();
                 console.log(data);
+
+                if(!data.countryCode) 
+                    throw new Error("The dosen't seem to be a city. Click somewhere else 😉");
+
                 setCityName(data.city || data.locality || "");
                 setCountry(data.countryName);
                 setEmoji(convertToEmoji(data.countryCode))
             } catch (err) {
-                console.error(err);
+                setGeocodingError(err.message)
             } finally {
                 setIsLoadingGeocoding(false);
             }
         }
-    }, []);
+        fetchCityData();
+    }, [lat , lng]);
+
+    function handleSubmit(e) {
+        e.preventDefault();
+    }
+
+    if (isLoadingGeocoding) return <Spinner />
+    if (geocodingError) return <Message message="Start by clicking somewhere on the map" />
 
     return (
-        <form className={styles.form}>
-            <div className={styles.row}>
+        <form className={styles.form} onSubmit={handleSubmit}>
                 <label htmlFor="cityName">City name</label>
                 <input
                 id="cityName" onChange={(e) => setCityName(e.target.value)}
