@@ -2,9 +2,9 @@ import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvent } from "rea
 import styles from "./Map.module.css";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useCities } from "../contexts/CitiesContext";
-import { useGeolocation } from './../hooks/useGeolocation';
-import useUrlPosition from "../hooks/useUrlPosition";
+import { useCities } from "../../contexts/CitiesContext";
+import { useGeolocation } from '../../hooks/useGeolocation';
+import useUrlPosition from "../../hooks/useUrlPosition";
 
 function Map() {
     const navigate = useNavigate();
