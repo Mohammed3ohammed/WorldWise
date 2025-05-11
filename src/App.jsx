@@ -1,13 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/Homepage";
+import Homepage from "./pages/Homepage/Homepage";
+import Product from "./pages/Product/Product";
 import Pricing from "./pages/Pricing";
-import Product from "./pages/Product";
-import Login from "./pages/Login";
+
+import Login from "./pages/Login/Login";
 import { AuthProvider } from "./contexts/FakeAuthContext";
-import AppLayout from './pages/AppLayout';
-import CityList from "./components/CityList";
-import CountriesList from './components/CountryList';
-import Form from "./components/Form";
+import AppLayout from './pages/AppLayout/AppLayout';
+import CityList from "./components/City/CityList";
+import CountriesList from './components/Country/CountryList';
+import Form from "./components/Form/Form";
 import { CitiesProvider } from "./contexts/CitiesContext";
 
 

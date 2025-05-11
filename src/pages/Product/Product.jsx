@@ -1,4 +1,4 @@
-import PageNav from "../../components/PageNav";
+import PageNav from "../../components/AppNav/AppNav";
 import sections from "./Product.module.css";
 
 export default function Product() {

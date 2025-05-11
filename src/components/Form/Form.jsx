@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Button from "./Button";
+import Button from "../Button/Button";
 import styles from "./Form.module.css"
-import BackButton from "./BackButton";
+import BackButton from "../Button/BackButton";
 import useUrlPosition from "../../hooks/useUrlPosition";
 import Message from "../Message/Message";
-import Spinner from "../Spinner";
+import Spinner from "../Spinner/Spinner";
 
 export function convertToEmoji(countryCode) {
     const codePoints = countryCode

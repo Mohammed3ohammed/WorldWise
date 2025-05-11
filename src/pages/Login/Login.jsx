@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Button from "../../components/Button/Button";
-import PageNav from "../../components/PageNav";
+import PageNav from "../../components/AppNav/AppNav";
 import styles from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/FakeAuthContext";

@@ -1,5 +1,5 @@
 import AppNav from "../AppNav/AppNav";
-import Logo from "./logo";
+import Logo from "../logo/Logo";
 import styles from "./Sidebar.module.css";
 import { Outlet } from "react-router-dom";
 
