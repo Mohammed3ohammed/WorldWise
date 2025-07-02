@@ -16,7 +16,7 @@ export default  function Pricing() {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat molestiae fugit qui corporis alias amet voluptate fugiat explicabo laudantium rem nihil enim deleniti sapiente, eius, est culpa, natus in officia.
           </p>
         </div>
-        <img src="img-2.jpg" alt="" />
+        <img src="img-2.jpg" alt="overview of a large city with skyscrapers" />
       </section>
     </main>
   )
