@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import styles from "./Form.module.css"
 import BackButton from "../Button/BackButton";
-import { useUrlPosition } from "../../hooks/useUrlPosition";
 import Message from "../Message/Message";
 import Spinner from "../Spinner/Spinner";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import { useCities } from "../../contexts/CitiesContext";
+import { useUrlPosition } from "../../hooks/useUrlPosition";
+import "react-datepicker/dist/react-datepicker.css";
+
+
 export function convertToEmoji(countryCode) {
     const codePoints = countryCode
     .toUpperCase()
@@ -84,12 +87,9 @@ function Form() {
     navigate("/app/cities");
   }
 
-  if (isLoadingGeocoding) return <Spinner />;
-
-  if (!lat && !lng)
-    return <Message message="Start by clicking somewhere on the map" />;
-
-  if (geocodingError) return <Message message={geocodingError} />;
+if (isLoadingGeocoding) return <Spinner />;
+if (!lat && !lng) return <Message message="Start by clicking somewhere on the map" />;
+if (geocodingError) return <Message message={geocodingError} />;
     return (
         <form
             className={`${styles.form} ${isLoading ? styles.loading : ""}`}

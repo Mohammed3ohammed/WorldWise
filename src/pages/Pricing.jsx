@@ -1,5 +1,5 @@
-import PageNav from "../components/PageNav"
-import styles from "./Product.module.css";
+import PageNav from "../components/Page/PageNav"
+import styles from "./Product/Product.module.css";
 
 export default  function Pricing() {
   return (

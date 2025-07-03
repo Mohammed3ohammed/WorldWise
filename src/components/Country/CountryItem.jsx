@@ -1,7 +1,7 @@
 import styles from "./CountryItem.module.css";
 
 
-function CountryItem() {
+function CountryItem({ country }) {
     return (
         <li className={styles.CountryItem}>
             <span>{country.emoji}</span>

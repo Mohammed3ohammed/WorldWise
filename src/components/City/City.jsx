@@ -20,8 +20,10 @@ function City() {
     useEffect(() => {
         getCity(id);
     }, [id, getCity]);
+
     const  {cityName, emoji, date, notes} = currentCity;
     if (isLoading) return <Spinner />
+    
     return (
         <div className={styles.city}>
             <div className={styles.row}>

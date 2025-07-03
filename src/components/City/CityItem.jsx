@@ -11,7 +11,7 @@ import { useCities } from "../../contexts/CitiesContext";
 
 
 function CityItem({ city } ) {
-    const {currentCity} = useCities();
+  const { currentCity, deleteCity } = useCities();
     const { cityName, emoji, date, id, position } = city;
 
     function handleClick(e) {

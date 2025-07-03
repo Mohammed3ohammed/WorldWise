@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import ProtectedRoute from "./pages/ProductedRoute";
 import Login from "./pages/Login/Login";
 import { AuthProvider } from "./contexts/FakeAuthContext";
 import CityList from "./components/City/CityList";
@@ -8,6 +7,7 @@ import CountriesList from './components/Country/CountryList';
 import Form from "./components/Form/Form";
 import { CitiesProvider } from "./contexts/CitiesContext";
 import SpinnerFullPage from './components/Spinner/SpinnerFullPage';
+import ProtectedRoute from './pages/ProtectedRoute'
 
   const Homepage = lazy(() => import("./pages/Homepage/Homepage"));
   const Product = lazy(() => import("./pages/Product/Product"));
