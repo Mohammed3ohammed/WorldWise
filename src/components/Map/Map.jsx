@@ -4,7 +4,7 @@ import { useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useCities } from "../../contexts/CitiesContext";
 import { useGeolocation } from '../../hooks/useGeolocation';
-import useUrlPosition from "../../hooks/useUrlPosition";
+import { useUrlPosition } from "../../hooks/useUrlPosition";
 import {
   MapContainer,
   TileLayer,
@@ -15,7 +15,7 @@ import {
 } from "react-leaflet";
 import Button from "../Button/Button";
 
-function Map() {
+function Map () {
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const {

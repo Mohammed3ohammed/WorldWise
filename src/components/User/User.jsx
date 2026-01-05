@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts";
+// import { useAuth } from "../contexts";
 import styles from "./User.module.css";
+import { useAuth } from "../../contexts/FakeAuthContext";
 
-function User() {
+function User () {
     const {user, logout} = useAuth();
     const navigate = useNavigate();
 

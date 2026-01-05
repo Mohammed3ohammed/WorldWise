@@ -21,7 +21,7 @@ function reducer(state, action) {
 const FAKE_USER = {
     name: "Jack",
     email: "jack@example.com",
-    password: "1234546",
+     password: "qwerty",
     avatar: "https://i.pravatar.cc/100?u=zz",
 };
 
@@ -46,7 +46,7 @@ function AuthProvider({ children }) {
     );
 }
 
-function useAuth() {
+function useAuth () {
     const context = useContext(AuthContext);
     if (context === undefined)
         throw new Error("AuthContext was used outside AuthProvider");
